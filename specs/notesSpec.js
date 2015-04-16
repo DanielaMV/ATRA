@@ -2,8 +2,7 @@ describe("Notes", function() {
 
     var page = require("../pageObjects/notes.js");
     var data = require('../lib/data.js').data;	
-	var count_before = '';
-    var count_after = 0;
+	
     
     beforeEach(function() {
         isAngularSite(false);
@@ -12,6 +11,8 @@ describe("Notes", function() {
     });
     
     it('should post a note with validation on the notes count', function () {
+    	var count_before = '';
+        var count_after = 0;
     	count_before = page.count_notes_element();
     	page.show_note_upload().then(function () {
 		expect(page.note_upload_input().isDisplayed()).toBe(true);
