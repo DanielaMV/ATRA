@@ -46,5 +46,9 @@ module.exports = Factory.create({
     		return false;
     	}
 	},
+	
+	existing_note: function(test){
+		expect(element(by.css('div > div.mdm-gray > p')).getText() == test); 
+	},
 
 });
